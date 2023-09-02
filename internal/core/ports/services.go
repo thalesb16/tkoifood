@@ -8,5 +8,5 @@ type StoreService interface {
 }
 
 type OrderService interface {
-	Create(order string) (domain.Order, error)
+	Create(storeID, order string) (domain.Order, error)
 }

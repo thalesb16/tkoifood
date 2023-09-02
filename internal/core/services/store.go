@@ -18,6 +18,22 @@ func NewStoreService(storeRepository ports.StoreRepository, uidGen uidgen.UIDGen
 	}
 }
 
-func (srv *StoreService) Get(id string) (domain.Store, error)
+func (srv *StoreService) Get(id string) (domain.Store, error) {
+	store, err := srv.repository.Get(id)
+	if err != nil {
+		return domain.Store{}, err
+	}
 
-func (srv *StoreService) Create(name string) (domain.Store, error)
+	return store, nil
+}
+
+func (srv *StoreService) Create(name string) (domain.Store, error) {
+	newStore := domain.NewStore(srv.uidGen.New(), name)
+
+	err := srv.repository.Save(newStore)
+	if err != nil {
+		return domain.Store{}, err
+	}
+
+	return newStore, nil
+}

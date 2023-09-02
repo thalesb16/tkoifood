@@ -18,4 +18,13 @@ func NewOrderService(orderQueue ports.OrderQueue, uidGen uidgen.UIDGen) *OrderSe
 	}
 }
 
-func (srv *OrderService) Create(order string) (domain.Order, error)
+func (srv *OrderService) Create(storeID, order string) (domain.Order, error) {
+	newOrder := domain.NewOrder(srv.uidGen.New(), storeID, order)
+
+	err := srv.queue.Write(newOrder)
+	if err != nil {
+		return domain.Order{}, err
+	}
+
+	return newOrder, err
+}
