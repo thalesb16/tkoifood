@@ -31,7 +31,7 @@ func (a *API) router() *gin.Engine {
 	sGroup := r.Group("/store")
 	oGroup := r.Group("/order")
 
-	sGroup.GET("/:id")
+	sGroup.GET("/:store_id", a.sHandler.Get)
 	sGroup.POST("/", a.sHandler.Create)
 
 	oGroup.POST("/")

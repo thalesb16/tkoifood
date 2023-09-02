@@ -27,13 +27,13 @@ func (srv *StoreService) Get(id string) (domain.Store, error) {
 	return store, nil
 }
 
-func (srv *StoreService) Create(name string) (domain.Store, error) {
+func (srv *StoreService) Create(name string) (string, error) {
 	newStore := domain.NewStore(srv.uidGen.New(), name)
 
 	err := srv.repository.Save(newStore)
 	if err != nil {
-		return domain.Store{}, err
+		return "", err
 	}
 
-	return newStore, nil
+	return newStore.ID, nil
 }
