@@ -32,7 +32,7 @@ func (h *StoreHandler) Create(c *gin.Context) {
 	store := StoreDTO{}
 	err = json.Unmarshal(body, &store)
 	if err != nil {
-		c.Status(http.StatusInternalServerError)
+		c.Status(http.StatusBadRequest)
 		return
 	}
 

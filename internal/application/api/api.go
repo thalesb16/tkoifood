@@ -10,11 +10,13 @@ import (
 type API struct {
 	server   *http.Server
 	sHandler handlers.StoreHandler
+	oHandler handlers.OrderHandler
 }
 
-func New(sHandler handlers.StoreHandler) *API {
+func New(sHandler handlers.StoreHandler, oHandler handlers.OrderHandler) *API {
 	a := &API{
 		sHandler: sHandler,
+		oHandler: oHandler,
 	}
 
 	a.server = &http.Server{
@@ -34,7 +36,7 @@ func (a *API) router() *gin.Engine {
 	sGroup.GET("/:store_id", a.sHandler.Get)
 	sGroup.POST("/", a.sHandler.Create)
 
-	oGroup.POST("/")
+	oGroup.POST("/", a.oHandler.Create)
 
 	return r
 }
