@@ -1,6 +1,6 @@
 package ports
 
-import "github.com/thalesb16/koifood/internal/core/domain"
+import "github.com/thalesb16/tkoifood/internal/core/domain"
 
 type StoreRepository interface {
 	Get(id string) (domain.Store, error)

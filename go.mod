@@ -1,4 +1,4 @@
-module github.com/thalesb16/koifood
+module github.com/thalesb16/tkoifood
 
 go 1.20
 

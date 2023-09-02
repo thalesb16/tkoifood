@@ -1,9 +1,9 @@
 package services
 
 import (
-	"github.com/thalesb16/koifood/internal/core/domain"
-	"github.com/thalesb16/koifood/internal/core/ports"
-	"github.com/thalesb16/koifood/pkg/uidgen"
+	"github.com/thalesb16/tkoifood/internal/core/domain"
+	"github.com/thalesb16/tkoifood/internal/core/ports"
+	"github.com/thalesb16/tkoifood/pkg/uidgen"
 )
 
 type StoreService struct {

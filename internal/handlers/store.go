@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/thalesb16/koifood/internal/core/ports"
+	"github.com/thalesb16/tkoifood/internal/core/ports"
 )
 
 type StoreHandler struct {

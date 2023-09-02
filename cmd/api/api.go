@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/thalesb16/koifood/internal/application/api"
-	"github.com/thalesb16/koifood/internal/core/services"
-	"github.com/thalesb16/koifood/internal/handlers"
-	"github.com/thalesb16/koifood/internal/repositories"
-	"github.com/thalesb16/koifood/pkg/uidgen"
+	"github.com/thalesb16/tkoifood/internal/application/api"
+	"github.com/thalesb16/tkoifood/internal/core/services"
+	"github.com/thalesb16/tkoifood/internal/handlers"
+	"github.com/thalesb16/tkoifood/internal/repositories"
+	"github.com/thalesb16/tkoifood/pkg/uidgen"
 )
 
 func main() {

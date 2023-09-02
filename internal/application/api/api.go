@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/thalesb16/koifood/internal/handlers"
+	"github.com/thalesb16/tkoifood/internal/handlers"
 )
 
 type API struct {

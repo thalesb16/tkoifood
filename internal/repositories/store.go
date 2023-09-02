@@ -1,6 +1,6 @@
 package repositories
 
-import "github.com/thalesb16/koifood/internal/core/domain"
+import "github.com/thalesb16/tkoifood/internal/core/domain"
 
 type storage struct {
 	stores map[string][]byte
